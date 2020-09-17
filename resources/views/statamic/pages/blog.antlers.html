@@ -1,0 +1,213 @@
+<div class="relative max-w-5xl mx-auto my-16">
+    <div class="max-w-xl py-8 mx-auto">
+        <header class="px-8 mb-16 text-center content sm:px-0">
+            <h1 class="text-4xl font-bold">
+                Thoughts from the property developer gurus<span
+                    class="text-sorange-500"
+                    >.</span
+                >
+            </h1>
+            <div class="my-4 text-gray-500">
+                Property development articles covering finding sites, modelling
+                deals, rasing funding and much more.<span
+                    class="text-sorange-500"
+                    >.</span
+                >
+            </div>
+
+            <div id="mc_embed_signup">
+                <div id="mce-responses" class="clear">
+                    <div
+                        id="mce-error-response"
+                        class="items-center justify-center px-4 py-2 font-medium text-red-700 transition duration-150 ease-in-out bg-red-100 border border-transparent rounded-md sm:text-sm sm:leading-5"
+                        style="display:none"
+                    ></div>
+                    <div
+                        id="mce-success-response"
+                        class="items-center justify-center px-4 py-2 font-medium text-green-700 transition duration-150 ease-in-out bg-green-100 border border-transparent rounded-md focus:outline-none sm:text-sm sm:leading-5"
+                        style="display:none"
+                    ></div>
+                </div>
+
+                <form
+                    action="https://capital.us17.list-manage.com/subscribe/post?u=7b197ca13f7469d534ba0e55f&amp;id=73c879f4c2"
+                    method="post"
+                    id="mc-embedded-subscribe-form"
+                    name="mc-embedded-subscribe-form"
+                    class="mt-8 sm:flex"
+                    target="_blank"
+                    novalidate
+                >
+                    <input
+                        type="email"
+                        value=""
+                        name="EMAIL"
+                        id="mce-EMAIL"
+                        class="block w-full transition duration-150 ease-in-out form-input sm:text-sm sm:leading-5"
+                        placeholder="your@email.com"
+                    />
+
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div
+                        style="position: absolute; left: -5000px;"
+                        aria-hidden="true"
+                    >
+                        <input
+                            type="text"
+                            name="b_154550f73b62adef85d3cf407_56738a96cf"
+                            tabindex="-1"
+                            value=""
+                        />
+                    </div>
+
+                    <input
+                        type="submit"
+                        value="Subscribe"
+                        name="subscribe"
+                        id="mc-embedded-subscribe"
+                        class="w-full px-4 py-2 mt-4 ml-0 font-semibold bg-white border-2 rounded-lg ga-subscribe-form sm:ml-4 sm:mt-0 text-sblue-500 border-sblue-500 hover:bg-sblue-100"
+                    />
+                </form>
+            </div>
+            <script
+                type="text/javascript"
+                src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"
+            ></script>
+            <script type="text/javascript">
+                (function($) {
+                    window.fnames = new Array();
+                    window.ftypes = new Array();
+                    fnames[0] = "EMAIL";
+                    ftypes[0] = "email";
+                    fnames[1] = "FNAME";
+                    ftypes[1] = "text";
+                    fnames[2] = "LNAME";
+                    ftypes[2] = "text";
+                    fnames[3] = "ADDRESS";
+                    ftypes[3] = "address";
+                    fnames[4] = "PHONE";
+                    ftypes[4] = "phone";
+                    fnames[5] = "MMERGE5";
+                    ftypes[5] = "text";
+                    fnames[6] = "MMERGE6";
+                    ftypes[6] = "text";
+                    fnames[7] = "MMERGE7";
+                    ftypes[7] = "text";
+                    fnames[8] = "MMERGE8";
+                    ftypes[8] = "text";
+                    fnames[9] = "MMERGE9";
+                    ftypes[9] = "text";
+                    fnames[10] = "MMERGE10";
+                    ftypes[10] = "text";
+                    fnames[11] = "MMERGE11";
+                    ftypes[11] = "text";
+                })(jQuery);
+                var $mcj = jQuery.noConflict(true);
+            </script>
+            <!--End mc_embed_signup-->
+
+            {{ content | widont }}
+        </header>
+    </div>
+
+    {{ collection:articles paginate="true" limit="6" sort_by="date"
+    as="articles"}} {{ if no_results }}
+    <h2 class="text-3xl italic tracking-tight">
+        No Posts
+    </h2>
+    {{ /if }}
+
+    <div
+        class="grid max-w-lg gap-5 px-8 mx-auto mt-12 lg:grid-cols-3 lg:max-w-none sm:px-0"
+    >
+        {{ articles }} {{ partial:statamic/blog/article }} {{ /articles }}
+    </div>
+
+    {{ paginate }}
+
+    <nav
+        class="flex items-center justify-between px-4 mt-12 border-t border-gray-200 sm:px-0"
+    >
+        {{ if prev_page }}
+        <div class="flex flex-1 w-0">
+            <a
+                href="{{ prev_page }}"
+                class="inline-flex items-center pt-4 pr-1 -mt-px text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-t-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-400"
+            >
+                <svg
+                    class="w-5 h-5 mr-3 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                        clip-rule="evenodd"
+                    />
+                </svg>
+                Previous
+            </a>
+        </div>
+        {{ else }}
+        <div class="flex flex-1 w-0">
+            <a
+                href="{{ prev_page }}"
+                class="inline-flex items-center pt-4 pr-1 -mt-px text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-t-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-400"
+            >
+                <svg
+                    class="w-5 h-5 mr-3 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z"
+                        clip-rule="evenodd"
+                    />
+                </svg>
+                Previous
+            </a>
+        </div>
+        {{ /if }} {{ links:segments }}
+        <div class="flex mx-auto">
+            {{ first }} {{ if page == current_page }}
+            <a
+                href="{{ url }}"
+                class="inline-flex items-center px-4 pt-4 -mt-px text-sm font-medium leading-5 transition duration-150 ease-in-out border-t-2 border-sblue-500 text-sblue-500 focus:outline-none focus:text-sblue-800 focus:border-sblue-700 active"
+            >
+                {{ page }}
+            </a>
+            {{ else }}
+            <a
+                href="{{ url }}"
+                class="inline-flex items-center px-4 pt-4 -mt-px text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-t-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-400"
+            >
+                {{ page }}
+            </a>
+            {{ /if }} {{ /first }}
+        </div>
+        {{ /links:segments }}
+
+        <div class="flex justify-end flex-1 w-0">
+            <a
+                href="{{ next_page }}"
+                class="inline-flex items-center pt-4 pl-1 -mt-px text-sm font-medium leading-5 text-gray-500 transition duration-150 ease-in-out border-t-2 border-transparent hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-400"
+            >
+                Next
+                <svg
+                    class="w-5 h-5 ml-3 text-gray-400"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                >
+                    <path
+                        fill-rule="evenodd"
+                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                        clip-rule="evenodd"
+                    />
+                </svg>
+            </a>
+        </div>
+    </nav>
+
+    {{ /paginate }} {{ /collection:articles }}
+</div>

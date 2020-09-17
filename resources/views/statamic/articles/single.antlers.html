@@ -1,0 +1,159 @@
+<meta property=“og:type” content=“article” />
+<meta property="og:title" content="{{ title }}" />
+<meta property="og:description" content="{{ content | flatten | join | strip_tags | safe_truncate:90:... }}" />
+<meta property="og:url" content="{{ current_url }}" />
+
+
+<div class="relative w-full ml-0 ">
+    <div
+        class="absolute z-10 w-full h-full mt-0 ml-0 bg-black bg-opacity-75 top"
+    ></div>
+
+    <div
+        class="flex justify-center object-fill w-full bg-center bg-cover h-80" 
+        style="background-image: url({{ url }}); height: 30rem;"
+    >
+        {{ /glide:featured_image }}
+        <div class="container absolute z-50">
+            <div class="max-w-md mx-auto text-center md:max-w-3xl">
+                <h1 class="mx-auto text-lg font-bold text-white mt-36 md:mt-32 lg:px-0 md:text-4xl lg:text-5xl">
+                {{ title }}
+                </h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="flex-grow">
+    <div class="container pb-20">
+        <div class="relative max-w-5xl mx-auto mt-0 sm:mt-16">
+            <article class="max-w-2xl mx-auto">
+                <div class="flex items-center p-4 mb-10">
+                    {{ author }} <img class="w-10 h-10 rounded-full" src="{{ email | gravatar }}" alt="Avatar of {{
+                    name }}" />
+                    <div class="ml-4 text-sm">
+                        <p class="font-semibold leading-none text-gray-900">
+                            {{ name }}
+                        </p>
+                        <p class="text-gray-600">
+                            <time datetime="{{ date format="M j, Y" }}">
+                                {{ date format="M j, Y" }}
+                            </time>
+                            <span class="mx-1">
+                                ·
+                            </span>
+                            <span>
+                                {{ content | flatten | join | strip_tags | read_time }}
+                                mins read
+                            </span>
+                        </p>
+                    </div>
+                    {{ /author }}
+                </div>
+
+                <div class="prose lg:prose-xl">
+                    {{ content }} {{ if type == "text" }}
+
+                    <div class="text">
+                        {{ text }}
+                    </div>
+
+                    {{ elseif type == "image" }} {{ glide:image width="1000" }}
+                    <figure class="mb-8">
+                        <img src="{{ url }}" alt="{{ caption }}" />
+                        <figcaption>{{ caption }}</figcaption>
+                    </figure>
+                    {{ /glide:image }} {{ /if }} {{ /content }}
+                </div>
+            </article>
+
+    </div>
+    <div class="py-12 bg-white lg:py-16">
+        
+        <div class="max-w-screen-xl px-4 py-2 mx-auto sm:px-6 lg:px-8">
+            <div id="mce-responses" class="clear">
+                <div id="mce-error-response"
+                    class="items-center justify-center px-4 py-2 font-medium text-red-700 transition duration-150 ease-in-out bg-red-100 border border-transparent rounded-md sm:text-sm sm:leading-5"
+                    style="display:none"></div>
+                <div id="mce-success-response"
+                    class="items-center justify-center px-4 py-2 font-medium text-green-700 transition duration-150 ease-in-out bg-green-100 border border-transparent rounded-md focus:outline-none sm:text-sm sm:leading-5"
+                    style="display:none"></div>
+            </div>
+        </div>
+
+        <div class="max-w-screen-xl px-4 mx-auto sm:px-6 lg:px-8">
+            <div class="px-6 py-6 rounded-lg bg-sblue-500 md:py-12 md:px-12 lg:py-16 lg:px-16 xl:flex xl:items-center">
+                <div class="xl:w-0 xl:flex-1">
+                    <h2 class="text-2xl font-extrabold leading-8 tracking-tight text-white sm:text-3xl sm:leading-9">
+                        Want product news and updates?
+                    </h2>
+                    <p class="max-w-3xl mt-3 text-lg leading-6 text-indigo-200" id="newsletter-headline">
+                        Sign up for our newsletter to stay up to date.
+                    </p>
+                </div>
+                <div class="mt-8 sm:w-full sm:max-w-md xl:mt-0 xl:ml-8">
+                    
+                        <form action="https://capital.us17.list-manage.com/subscribe/post?u=7b197ca13f7469d534ba0e55f&amp;id=73c879f4c2"
+                            method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" target="_blank"
+                            novalidate class="sm:flex" aria-labelledby="newsletter-headline">
+                            
+                        <input aria-label="Email address" type="email" required
+                            class="w-full px-5 py-3 text-base leading-6 text-gray-900 placeholder-gray-500 transition duration-150 ease-in-out bg-white border border-transparent rounded-md appearance-none focus:outline-none focus:placeholder-gray-400"
+                            placeholder="Enter your email" type="email" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                            
+                        <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0">
+                            
+                            <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text"
+                                    name="b_7b197ca13f7469d534ba0e55f_73c879f4c2" tabindex="-1" value=""></div>
+                                    
+                                    <input type="submit" value="Notify me" name="subscribe" id="mc-embedded-subscribe"
+                                class="flex items-center justify-center w-full px-5 py-3 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-blue-800 border border-transparent rounded-md cursor-pointer hover:bg-indigo-400 focus:outline-none focus:bg-indigo-400">
+                                
+                            </input>
+
+                        </div>
+                    </form>
+                    <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
+                    <script type="text/javascript">
+                        (function ($) {
+                            window.fnames = new Array();
+                            window.ftypes = new Array();
+                            fnames[0] = "EMAIL";
+                            ftypes[0] = "email";
+                            fnames[1] = "FNAME";
+                            ftypes[1] = "text";
+                            fnames[2] = "LNAME";
+                            ftypes[2] = "text";
+                            fnames[3] = "ADDRESS";
+                            ftypes[3] = "address";
+                            fnames[4] = "PHONE";
+                            ftypes[4] = "phone";
+                            fnames[5] = "MMERGE5";
+                            ftypes[5] = "text";
+                            fnames[6] = "MMERGE6";
+                            ftypes[6] = "text";
+                            fnames[7] = "MMERGE7";
+                            ftypes[7] = "text";
+                            fnames[8] = "MMERGE8";
+                            ftypes[8] = "text";
+                            fnames[9] = "MMERGE9";
+                            ftypes[9] = "text";
+                            fnames[10] = "MMERGE10";
+                            ftypes[10] = "text";
+                            fnames[11] = "MMERGE11";
+                            ftypes[11] = "text";
+                        })(jQuery);
+                        var $mcj = jQuery.noConflict(true);
+                    </script>
+                    <p class="mt-3 text-sm leading-5 text-indigo-200">
+                        We care about the protection of your data. Read our
+                        <a href="/privacy" class="font-medium text-white underline">
+                            Privacy Policy.
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

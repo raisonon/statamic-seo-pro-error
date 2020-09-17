@@ -1,0 +1,12 @@
+title: Articles
+template: statamic/articles/single
+layout: statamic/layout
+taxonomies:
+  - tag
+revisions: false
+route: '/blog/{slug}'
+date: true
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
